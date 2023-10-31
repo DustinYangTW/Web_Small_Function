@@ -3,3 +3,7 @@
 ################################################################################
 
 *.vsidx
+/Web_Small_Function_For_Core7/.vs/Web_Small_Function_For_Core7/v17/.suo
+/bin
+/obj
+

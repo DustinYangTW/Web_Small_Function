@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Web_Small_Function_For_Core7.props" />
+</Project>

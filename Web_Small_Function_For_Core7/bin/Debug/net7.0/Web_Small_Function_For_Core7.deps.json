@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Web_Small_Function_For_Core7/1.0.0": {
+        "runtime": {
+          "Web_Small_Function_For_Core7.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Web_Small_Function_For_Core7/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -4,6 +4,7 @@
 
 *.vsidx
 /Web_Small_Function_For_Core7/.vs/Web_Small_Function_For_Core7/v17/.suo
-/bin
-/obj
-
+/Web_Small_Function_For_Core7/bin/Debug/net7.0/Web_Small_Function_For_Core7.dll
+/Web_Small_Function_For_Core7/bin/Debug/net7.0/Web_Small_Function_For_Core7.pdb
+/Web_Small_Function_For_Core7/obj/Debug/net7.0/Web_Small_Function_For_Core7.dll
+/Web_Small_Function_For_Core7/obj/Debug/net7.0/Web_Small_Function_For_Core7.pdb

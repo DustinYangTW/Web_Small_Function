@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "上傳4G以上的檔案";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="mb-3">上傳4G以上的檔案</h1>
+
+<form id="fileUploadForm" asp-action="index" method="POST" enctype="multipart/form-data">
+    <div class="mt-4">
+        <div class="d-flex justify-content-evenly flex-wrap flex-column flex-lg-row">
+            <div class="col-12 col-lg-8">
+                <input class="form-control" type="file" name="file" id="fileInput">
+            </div>
+            <button type="button" id="uploadButton" class="btn btn-info mt-3 mt-lg-0">上傳檔案</button>
+        </div>
+    </div>
+
+</form>
+
+
+<script>
+    document.getElementById("uploadButton").addEventListener("click", async () => {
+        const fileInput = document.getElementById("fileInput");
+        const file = fileInput.files[0];
+
+        if (!file) {
+            alert("請選擇檔案");
+            return;
+        }
+        var startTime = performance.now();
+
+        // 1. 上傳切割後的文件塊
+        const chunkSize = 1024 * 1024; // 設定文件塊的大小(目前是1MB)
+        const totalChunks = Math.ceil(file.size / chunkSize);
+        const NewFileName = file.name.replace('_');
+        for (let chunkNumber = 0; chunkNumber < totalChunks; chunkNumber++) {
+            const start = chunkNumber * chunkSize;
+            const end = Math.min(start + chunkSize, file.size);
+            const chunk = file.slice(start, end);
+            const blobName = `${NewFileName.split('.')[0]}_${chunkNumber}`; // 指定blob名字
+            const formData = new FormData();
+            formData.append("file", chunk, blobName);
+
+            try {
+                const response = await fetch(`@Url.Action("UploadFile","UploadFileFor4GUp")`, {
+                    method: "POST",
+                    body: formData,
+                });
+
+                if (!response.ok) {
+                    // 如果HTTP回應狀態碼不是200 OK，表示發生錯誤
+                    throw new Error(`請求失敗: ${response.status} - ${response.statusText}`);
+                }
+            } catch (error) {
+                console.error("發生錯誤:", error);
+                return;
+            }
+        }
+
+        try {
+            // 2. 合併文件塊
+            var url = '@Url.Action("MergeFiles","UploadFileFor4GUp")' + `?fileName=${NewFileName}`
+            const response = await fetch(url, {
+                method: "POST",
+            });
+
+            if (!response.ok) {
+                // 如果HTTP回應狀態碼不是200 OK，表示發生錯誤
+                throw new Error(`請求失敗: ${response.status} - ${response.statusText}`);
+            }
+        } catch (error) {
+            console.error("發生錯誤:", error);
+            return;
+        }
+
+
+        // 結束計時
+        var endTime = performance.now();
+        // 計算執行時間
+        var executionTime = (endTime - startTime) / 1000;
+
+        alert(`上傳成功~執行時間為 : ${executionTime}秒`);
+    });
+
+
+</script>
+
+<br />
+@ViewData["Msg"]

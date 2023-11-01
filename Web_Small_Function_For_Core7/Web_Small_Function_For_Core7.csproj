@@ -1,13 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="bootstrap" Version="5.3.2" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="bootstrap" Version="5.3.2" />
+	</ItemGroup>
 
+	<ItemGroup>
+		<!--給上傳4G以上的檔案使用-->
+		<Folder Include="wwwroot\UploadFileFor4GUp\" />
+		<Folder Include="wwwroot\UploadFileFor4GUp\complete\" />
+		<Folder Include="wwwroot\UploadFileFor4GUp\temp\" />
+		<!--*************-->
+	</ItemGroup>
 </Project>

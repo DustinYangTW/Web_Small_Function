@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mjqKCKGkRQ8cg9cOYB71l4IEIbByBHOeCJtbvyTyEvg=",
+  "Hash": "tZpHF6xFfW82P3NcO2jdNhAHIkRmdcwpgfLSmA2kybQ=",
   "Source": "Web_Small_Function_For_Core7",
   "BasePath": "_content/Web_Small_Function_For_Core7",
   "Mode": "Default",
@@ -1817,6 +1817,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\OneDrive\\OneDrive - IISIGroup\\文件\\core\\Web_Small_Function\\Web_Small_Function_For_Core7\\wwwroot\\UploadFileFor4GUpFiles\\complete\\45646.pptx",
+      "SourceId": "Web_Small_Function_For_Core7",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\OneDrive\\OneDrive - IISIGroup\\文件\\core\\Web_Small_Function\\Web_Small_Function_For_Core7\\wwwroot\\",
+      "BasePath": "_content/Web_Small_Function_For_Core7",
+      "RelativePath": "UploadFileFor4GUpFiles/complete/45646.pptx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UploadFileFor4GUpFiles\\complete\\45646.pptx"
     }
   ]
 }
